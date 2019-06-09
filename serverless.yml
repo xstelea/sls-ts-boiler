@@ -1,0 +1,41 @@
+service:
+  name: sls-typescript-boiler
+
+custom:
+  serverless-offline:
+    noAuth: true
+    host: 0.0.0.0
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs10
+  region: ${env:REGION, 'eu-west-1'}
+  profile: ${env:PROFILE, 'default'}
+  environment:
+    ENV: ${env:ENV, 'stage'}
+
+functions:
+  triggerExport:
+    handler: handler.demo
+    events:
+      - http:
+          method: get
+          path: /demo
+          cors:
+            origin: '*'
+
+resources:
+  Resources:
+    GatewayResponseDefault4XX:
+      Type: 'AWS::ApiGateway::GatewayResponse'
+      Properties:
+        ResponseParameters:
+          gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
+          gatewayresponse.header.Access-Control-Allow-Headers: "'*'"
+        ResponseType: DEFAULT_4XX
+        RestApiId:
+          Ref: 'ApiGatewayRestApi'

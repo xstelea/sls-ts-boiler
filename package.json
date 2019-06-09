@@ -1,0 +1,46 @@
+{
+  "name": "sls-ts-boiler",
+  "version": "0.1.0",
+  "author": "<alex@stelea.io",
+  "license": "MIT",
+  "main": "handler.js",
+  "scripts": {
+    "start": "sls offline",
+    "deploy:stage": "./deploy.sh stage"
+  },
+  "dependencies": {
+    "@types/aws-sdk": "^2.7.0",
+    "@types/lodash": "^4.14.123",
+    "@types/node-fetch": "^2.1.4",
+    "@types/pino": "^5.8.7",
+    "@types/uuid": "^3.4.4",
+    "aws-sdk": "^2.382.0",
+    "node-fetch": "^2.3.0",
+    "pino": "^5.12.6",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@commitlint/config-angular": "^7.5.0",
+    "@types/aws-lambda": "8.10.1",
+    "@types/jsonwebtoken": "^8.3.0",
+    "@types/node": "^8.0.57",
+    "commitlint": "^7.5.2",
+    "husky": "^1.3.1",
+    "serverless-offline": "^4.9.4",
+    "serverless-plugin-typescript": "^1.1.5",
+    "typescript": "^2.8.1"
+  },
+  "release": {
+    "branch": "master",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}

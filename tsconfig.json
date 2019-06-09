@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "target": "es5",
+    "outDir": ".build",
+    "moduleResolution": "node",
+    "lib": ["es2017"],
+    "rootDir": "./",
+    "experimentalDecorators": true
+  },
+  "exclude": ["node_modules"]
+}

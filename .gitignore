@@ -1,0 +1,5 @@
+*.env
+!.sample.env
+node_modules
+.build
+.sonarlint
