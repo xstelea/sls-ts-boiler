@@ -15,7 +15,7 @@
     "@types/pino": "^5.8.7",
     "@types/uuid": "^3.4.4",
     "aws-sdk": "^2.382.0",
-    "node-fetch": "^2.3.0",
+    "node-fetch": "^2.6.1",
     "pino": "^5.12.6",
     "uuid": "^3.3.2"
   },
