@@ -3,8 +3,8 @@ export const response = (statusCode: number, data = {}) => {
     statusCode,
     body: JSON.stringify(data),
     headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Credentials": true
-    }
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Credentials': true,
+    },
   };
 };
