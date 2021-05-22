@@ -5,7 +5,8 @@
   "license": "MIT",
   "main": "handler.js",
   "scripts": {
-    "start": "sls offline"
+    "start": "sls offline",
+    "postinstall": "is-ci | yarn husky install"
   },
   "dependencies": {
     "koa": "^2.13.1",
@@ -30,6 +31,7 @@
     "@types/uuid": "^8.3.0",
     "commitlint": "^12.1.4",
     "husky": "^6.0.0",
+    "is-ci": "^3.0.0",
     "serverless": "^2.43.0",
     "serverless-offline": "^7.0.0",
     "serverless-plugin-typescript": "^1.1.9",
